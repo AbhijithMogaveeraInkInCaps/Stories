@@ -1,4 +1,4 @@
-package com.abhijith.stories.storyview.callback
+package com.abhijith.stories.storyscreeen.callback
 
 interface ProgressTimeWatcher {
     fun onEnd(indexFinished: Int)

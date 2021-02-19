@@ -1,4 +1,4 @@
-package com.abhijith.stories.storyview
+package com.abhijith.stories.storyscreeen
 
 import android.content.Context
 import android.util.TypedValue

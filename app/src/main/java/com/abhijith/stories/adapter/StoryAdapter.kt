@@ -1,4 +1,4 @@
-package com.abhijith.stories.ui.adapter
+package com.abhijith.stories.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.abhijith.stories.R
-import com.abhijith.stories.StoryModel
+import com.abhijith.stories.model.StoryModel
 
 class StoryAdapter(val context: Context,val sm: StoryModel) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
 

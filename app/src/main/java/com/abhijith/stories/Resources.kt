@@ -1,6 +1,8 @@
 package com.abhijith.stories
 
 import android.view.View
+import android.view.ViewGroup
+
 val colorList = listOf(
     R.color.story_blue,
     R.color.story_dark_green,
@@ -13,15 +15,13 @@ val colorList = listOf(
 data class ViewAddress(
     var viewWidth: Int,
     var viewHeight: Int,
-    var viewPositionX: Int,
-    var viewPositionY: Int,
+    var x: Float,
+    var y: Float,
+    var rotationFactor: Float
 )
 
-fun View.getLocationDetails(): ViewAddress {
-    val point = IntArray(2)
-    getLocationInWindow(point)
-    return ViewAddress(width,height,point[0],point[1])
-}
+
+
 
 //fun View.setLocationDetails(): ViewAddress {
 //    val point = IntArray(2)

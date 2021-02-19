@@ -1,4 +1,4 @@
-package com.abhijith.stories.storyview.data
+package com.abhijith.stories.storyscreeen.data
 
 import android.view.View
 

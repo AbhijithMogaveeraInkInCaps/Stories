@@ -15,13 +15,13 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Stories">
-        <activity android:name=".ui.activity.InstaStatusActivity"/>
-        <activity android:name=".ui.activity.TestActivity"/>
-        <activity android:name=".ui.activity.VideoActivity"/>
+        <activity android:name="com.abhijith.stories.activity.InstaStatusActivity"/>
+        <activity android:name="com.abhijith.stories.activity.StoryDisplayActivity"/>
+        <activity android:name="com.abhijith.stories.activity.VideoActivity"/>
         <activity
             android:windowSoftInputMode="adjustResize"
-            android:name=".ui.activity.TextStatusActivity"/>
-        <activity android:name=".ui.activity.MainActivity">
+            android:name="com.abhijith.stories.activity.TextStatusActivity"/>
+        <activity android:name="com.abhijith.stories.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

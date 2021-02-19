@@ -1,4 +1,4 @@
-package com.abhijith.stories.storyview
+package com.abhijith.stories.storyscreeen
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -9,7 +9,7 @@ import android.widget.ProgressBar
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.abhijith.stories.R
-import com.abhijith.stories.storyview.callback.ProgressTimeWatcher
+import com.abhijith.stories.storyscreeen.callback.ProgressTimeWatcher
 
 @SuppressLint("ViewConstructor")
 class MyProgressBar(

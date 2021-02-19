@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.InstaStatusActivity">
+    tools:context=".activity.InstaStatusActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/base"
@@ -75,6 +75,7 @@
             android:src="@drawable/ic_send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,6 +1,8 @@
-package com.abhijith.stories
+package com.abhijith.stories.model
 
+import androidx.annotation.DrawableRes
 import androidx.lifecycle.MutableLiveData
+import com.abhijith.stories.ViewAddress
 
 object StoryModel {
 
@@ -15,8 +17,15 @@ object StoryModel {
     data class StoryDataImage(
         val ID: Long,
         val path: String,
-        val link:String=""
+        val link:String="",
+        val stickerList:List<StoryDataSticker> = listOf()
     ) : StoryBase(ID, MediaType.IMAGE)
+
+    data class StoryDataSticker(
+        @DrawableRes
+        val id:Int,
+        val viewAddress: ViewAddress
+    )
 
     data class TextStoryData(
         val ID: Long,

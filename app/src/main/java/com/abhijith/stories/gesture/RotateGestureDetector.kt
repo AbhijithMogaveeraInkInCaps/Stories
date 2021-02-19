@@ -8,24 +8,12 @@ open class RotateGestureDetector(
     context: Context?,
     private val mListener: OnRotateGestureListener
 ) : TwoFingerGestureDetector(context) {
-    /**
-     * Listener which must be implemented which is used by RotateGestureDetector
-     * to perform callbacks to any implementing class which is registered to a
-     * RotateGestureDetector via the constructor.
-     *
-     * @see RotateGestureDetector.SimpleOnRotateGestureListener
-     */
     interface OnRotateGestureListener {
         fun onRotate(detector: RotateGestureDetector?): Boolean
         fun onRotateBegin(detector: RotateGestureDetector?): Boolean
         fun onRotateEnd(detector: RotateGestureDetector?)
     }
 
-    /**
-     * Helper class which may be extended and where the methods may be
-     * implemented. This way it is not necessary to implement all methods
-     * of OnRotateGestureListener.
-     */
     class SimpleOnRotateGestureListener : OnRotateGestureListener {
         override fun onRotate(detector: RotateGestureDetector?): Boolean {
             return false
@@ -95,10 +83,6 @@ open class RotateGestureDetector(
             }
             MotionEvent.ACTION_MOVE -> {
                 updateStateByEvent(event)
-
-                // Only accept the event if our relative pressure is within
-                // a certain limit. This can help filter shaky data as a
-                // finger is lifted.
                 if (mCurrPressure / mPrevPressure > PRESSURE_THRESHOLD) {
                     val updatePrevious = mListener.onRotate(this)
                     if (updatePrevious) {
@@ -114,13 +98,6 @@ open class RotateGestureDetector(
         super.resetState()
         mSloppyGesture = false
     }
-
-    /**
-     * Return the rotation difference from the previous rotate event to the current
-     * event.
-     *
-     * @return The current rotation //difference in degrees.
-     */
     val rotationDegreesDelta: Float
         get() {
             val diffRadians =

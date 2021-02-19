@@ -1,7 +1,7 @@
-package com.abhijith.stories.storyview.callback
+package com.abhijith.stories.storyscreeen.callback
 
 import android.view.View
-import com.abhijith.stories.storyview.StoryMain
+import com.abhijith.stories.storyscreeen.StoryMain
 
 interface StoriesCallback{
     fun done()

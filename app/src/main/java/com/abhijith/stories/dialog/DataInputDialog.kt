@@ -1,4 +1,4 @@
-package com.abhijith.stories.ui.dialog
+package com.abhijith.stories.dialog
 
 import android.app.AlertDialog
 import android.content.Context

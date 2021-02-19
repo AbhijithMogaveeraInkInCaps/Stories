@@ -1,4 +1,4 @@
-package com.abhijith.stories.ui.activity
+package com.abhijith.stories.activity
 
 import android.net.Uri
 import android.os.Bundle

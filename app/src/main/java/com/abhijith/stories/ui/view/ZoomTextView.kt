@@ -10,7 +10,7 @@ import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
 import com.abhijith.stories.gesture.RotateGestureDetector
-import com.abhijith.stories.ui.dialog.DataInputDialog
+import com.abhijith.stories.dialog.DataInputDialog
 
 class ZoomTextView : AppCompatTextView {
     private var mScaleDetector: ScaleGestureDetector? = null

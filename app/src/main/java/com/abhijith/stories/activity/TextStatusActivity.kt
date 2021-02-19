@@ -1,13 +1,15 @@
-package com.abhijith.stories.ui.activity
+package com.abhijith.stories.activity
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.View.OnTouchListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.abhijith.stories.StoryModel
+import com.abhijith.stories.model.StoryModel
 import com.abhijith.stories.colorList
 import com.abhijith.stories.databinding.LayoutTextStoriesBinding
 import com.abhijith.stories.ui.view.AutoResizeEditText
@@ -63,23 +65,14 @@ class TextStatusActivity : AppCompatActivity() {
             })
         }
 
-        // If a layout container, iterate over children and seed recursion.
-//        if (view is ViewGroup) {
-//            for (i in 0 until view.childCount) {
-//                val innerView: View = view.getChildAt(i)
-//                setupUI(innerView, aText)
-//            }
-//        }
     }
 
-//    private fun hideSoftKeyboard() {
-//        val inputMethodManager: InputMethodManager = this
-//            .getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-//        if (this.currentFocus != null
-//            && this.currentFocus!!.windowToken != null
-//        ) inputMethodManager.hideSoftInputFromWindow(
-//            this
-//                .currentFocus!!.windowToken, 0
-//        )
-//    }
+    companion object {
+        fun startActivity(context: Context) {
+            Intent(context, TextStatusActivity::class.java).apply {
+                context.startActivity(this)
+            }
+        }
+    }
+
 }

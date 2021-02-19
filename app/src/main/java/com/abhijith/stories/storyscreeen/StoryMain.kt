@@ -1,4 +1,4 @@
-package com.abhijith.stories.storyview
+package com.abhijith.stories.storyscreeen
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -15,9 +15,9 @@ import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.abhijith.stories.R
 import com.abhijith.stories.gesture.OnSwipeListener
-import com.abhijith.stories.storyview.callback.ProgressTimeWatcher
-import com.abhijith.stories.storyview.callback.StoriesCallback
-import com.abhijith.stories.storyview.data.StoriesView
+import com.abhijith.stories.storyscreeen.callback.ProgressTimeWatcher
+import com.abhijith.stories.storyscreeen.callback.StoriesCallback
+import com.abhijith.stories.storyscreeen.data.StoriesView
 
 
 @SuppressLint("ViewConstructor")

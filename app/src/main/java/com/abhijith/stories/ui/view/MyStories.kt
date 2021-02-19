@@ -19,12 +19,7 @@ import com.abhijith.stories.colorList
 
 
 @SuppressLint("ClickableViewAccessibility")
-class MyStories(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs),
-    View.OnTouchListener {
-
-    private val mCurrentViewport = RectF(0F, 0F, width.toFloat(), height.toFloat())
-    private val mContentRect: Rect? = null
-
+class MyStories(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs){
 
     var iv: ImageView
     var tv: ZoomTextView
@@ -42,20 +37,10 @@ class MyStories(context: Context, attrs: AttributeSet?) : ConstraintLayout(conte
 
     }
 
-    //dataAboutTheStroy
-    fun getData() {
-
-    }
-
-    //imageRelated
     fun setImage(bitmap: Uri) {
         iv.setImageURI(bitmap)
     }
 
-    //textRelated
-    fun setText(string: String) {
-//        tv.text = string
-    }
 
     //background related
     fun setBackgroundColors(color: Int) {
@@ -96,63 +81,6 @@ class MyStories(context: Context, attrs: AttributeSet?) : ConstraintLayout(conte
     private var mScaleFactor = 1.5f
 
     lateinit var currentView: View
-
-    private val scaleListener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
-
-        override fun onScale(detector: ScaleGestureDetector): Boolean {
-            mScaleFactor *= detector.scaleFactor
-            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 2.0f))
-            currentView.scaleX = mScaleFactor
-            currentView.scaleY = mScaleFactor
-            invalidate()
-            return true
-        }
-    }
-    private val mScaleDetector = ScaleGestureDetector(context, scaleListener)
-
-
-    //dragging
-    private var dX = 0f
-    private var dY = 0f
-    private var lastAction: Int = MotionEvent.ACTION_DOWN
-
-    override fun onTouch(view: View, event: MotionEvent): Boolean {
-
-        currentView = view
-        if(event.pointerCount == 2) {
-            mScaleDetector.onTouchEvent(event)
-            Log.e("Caps","Time to roatate")
-            rot.onTouchEvent(event)
-        }
-        when (event.actionMasked) {
-
-            MotionEvent.ACTION_DOWN -> {
-                dX = view.x - event.rawX
-                dY = view.y - event.rawY
-                lastAction = MotionEvent.ACTION_DOWN
-            }
-
-            MotionEvent.ACTION_MOVE -> {
-                view.y = event.rawY + dY
-                view.x = event.rawX + dX
-                lastAction = MotionEvent.ACTION_MOVE
-            }
-
-            MotionEvent.ACTION_UP ->
-                if (lastAction == MotionEvent.ACTION_DOWN)
-                    Toast.makeText(
-                        context,
-                        "Clicked!",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
-
-            else -> return false
-
-        }
-
-        return true
-    }
 
     fun getScreenInBitmap(): Bitmap {
 
