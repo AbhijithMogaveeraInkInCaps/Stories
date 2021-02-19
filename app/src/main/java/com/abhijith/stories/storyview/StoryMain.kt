@@ -145,7 +145,16 @@ class StoryMain(
         view.findViewById<FrameLayout>(R.id.leftLay).setOnTouchListener(touchListener)
         view.findViewById<FrameLayout>(R.id.rightLay).setOnTouchListener(touchListener)
         view.findViewById<FrameLayout>(R.id.swipeDetector).setOnTouchListener(touchListener)
+        showOpenLinkOption()
 
+    }
+
+    private fun showOpenLinkOption() {
+        if (storiesViewList[currentlyShownIndex].link.isNotEmpty()) {
+            view.findViewById<ImageView>(R.id.ivOpenLink).visibility = VISIBLE
+        }else{
+            view.findViewById<ImageView>(R.id.ivOpenLink).visibility = INVISIBLE
+        }
     }
 
     private fun initSelf() {
@@ -218,6 +227,7 @@ class StoryMain(
         if (storiesViewList[currentlyShownIndex].view is VideoView) {
             (storiesViewList[currentlyShownIndex].view as VideoView).start()
         }
+        showOpenLinkOption()
     }
 
     private fun stop() {
@@ -232,6 +242,7 @@ class StoryMain(
                     finish()
                     return
                 }
+                showOpenLinkOption()
             }
             show()
         } catch (e: IndexOutOfBoundsException) {
@@ -254,6 +265,7 @@ class StoryMain(
                 if (0 > currentlyShownIndex) {
                     currentlyShownIndex = 0
                 }
+                showOpenLinkOption()
             }
         } catch (e: IndexOutOfBoundsException) {
             currentlyShownIndex -= 2
