@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.abhijith.stories.R
 import com.abhijith.stories.databinding.ActivityMainBinding
 import com.abhijith.stories.dialog.DataInputDialog
+import com.abhijith.stories.extension.beInvisible
 import com.abhijith.stories.extension.getLocationDetails
 import com.abhijith.stories.extension.startImagePickingActivity
 import com.abhijith.stories.extension.toJpegFile
@@ -99,6 +100,10 @@ class InstaStatusActivity : AppCompatActivity() {
 
             binding.ivSticker1.loc = 0
             binding.ivSticker2.loc = 1
+
+            binding.btnStickerClose.setOnClickListener {
+                binding.lltop.beInvisible()
+            }
 
             lltop.setOnDragListener(dragAndDropListener)
 
