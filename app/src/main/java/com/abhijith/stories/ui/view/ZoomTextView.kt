@@ -9,10 +9,11 @@ import android.view.ScaleGestureDetector
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
-import com.abhijith.stories.gesture.RotateGestureDetector
 import com.abhijith.stories.dialog.DataInputDialog
+import com.abhijith.stories.gesture.RotateGestureDetector
 
 class ZoomTextView : AppCompatTextView {
+
     private var mScaleDetector: ScaleGestureDetector? = null
     private var mScaleFactor = 1f
     private var defaultSize = 0f
@@ -49,11 +50,12 @@ class ZoomTextView : AppCompatTextView {
     fun setZoomLimit(zoomLimit: Float) {
         this.zoomLimit = zoomLimit
     }
+
     inner class RotationListener(context: Context) : RotateGestureDetector(context, object :
         OnRotateGestureListener {
         var f = 0f
         override fun onRotate(detector: RotateGestureDetector?): Boolean {
-            Log.e("Caps","${detector?.rotationDegreesDelta}")
+            Log.e("Caps", "${detector?.rotationDegreesDelta}")
             f -= detector?.rotationDegreesDelta!!
             rotation = f
             invalidate()
@@ -67,6 +69,7 @@ class ZoomTextView : AppCompatTextView {
         override fun onRotateEnd(detector: RotateGestureDetector?) {
         }
     })
+
     val rot = RotationListener(context)
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -75,8 +78,8 @@ class ZoomTextView : AppCompatTextView {
     override fun onTouchEvent(event: MotionEvent): Boolean {
         super.onTouchEvent(event)
         mScaleDetector!!.onTouchEvent(event)
-        if(event.pointerCount==2)
-        rot.onTouchEvent(event)
+        if (event.pointerCount == 2)
+            rot.onTouchEvent(event)
         when (event.actionMasked) {
 
             MotionEvent.ACTION_DOWN -> {

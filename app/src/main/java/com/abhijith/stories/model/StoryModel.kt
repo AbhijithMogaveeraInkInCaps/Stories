@@ -2,6 +2,7 @@ package com.abhijith.stories.model
 
 import androidx.annotation.DrawableRes
 import androidx.lifecycle.MutableLiveData
+import com.abhijith.stories.R
 import com.abhijith.stories.ViewAddress
 
 object StoryModel {
@@ -22,7 +23,6 @@ object StoryModel {
     ) : StoryBase(ID, MediaType.IMAGE)
 
     data class StoryDataSticker(
-        @DrawableRes
         val id:Int,
         val viewAddress: ViewAddress
     )
@@ -52,5 +52,6 @@ object StoryModel {
         storyList.remove(storyDataImage)
     }
 
+    fun getStickerList():List<Int> = listOf(R.drawable.sticker_one,R.drawable.sticker_two)
     fun getAllStory() = storyList
 }

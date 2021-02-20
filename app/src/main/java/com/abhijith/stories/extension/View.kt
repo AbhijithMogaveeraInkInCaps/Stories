@@ -27,8 +27,9 @@ fun View.getLocationDetails(): ViewAddress {
 }
 
 fun View.setAddress(viewAddress: ViewAddress){
-    translationX = viewAddress.x+300
-    translationY = viewAddress.y+300
     layoutParams = ConstraintLayout.LayoutParams(viewAddress.viewWidth, viewAddress.viewHeight)
+    translationX = viewAddress.x
+    translationY = viewAddress.y
     rotation = viewAddress.rotationFactor
+    invalidate()
 }

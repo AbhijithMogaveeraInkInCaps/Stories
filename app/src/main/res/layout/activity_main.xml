@@ -87,7 +87,7 @@
         android:orientation="horizontal"
         android:visibility="invisible">
 
-        <ImageView
+        <com.abhijith.stories.ui.view.StickerView
             android:id="@+id/ivSticker1"
             android:layout_width="90dp"
             android:layout_height="90dp"
@@ -97,7 +97,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <com.abhijith.stories.ui.view.StickerView
             android:id="@+id/ivSticker2"
             android:layout_width="90dp"
             android:layout_height="90dp"
