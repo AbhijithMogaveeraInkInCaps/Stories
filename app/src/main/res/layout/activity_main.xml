@@ -89,8 +89,8 @@
 
         <com.abhijith.stories.ui.view.StickerView
             android:id="@+id/ivSticker1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="300px"
+            android:layout_height="300px"
             android:src="@drawable/sticker_one"
             app:layout_constraintBottom_toTopOf="@id/ivSticker2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +99,8 @@
 
         <com.abhijith.stories.ui.view.StickerView
             android:id="@+id/ivSticker2"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="300px"
+            android:layout_height="300px"
             android:src="@drawable/sticker_two"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -10,10 +10,10 @@ import com.abhijith.stories.gesture.RotateGestureDetector
 
 
 class StickerView : AppCompatImageView {
-    private var mScaleDetector: ScaleGestureDetector? = null
-    private var mScaleFactor = 1f
-    private var defaultSize = 0f
-    private var zoomLimit = 5.0f
+//    private var mScaleDetector: ScaleGestureDetector? = null
+//    private var mScaleFactor = 1f
+//    private var defaultSize = 0f
+//    private var zoomLimit = 5.0f
     var loc: Int = 0
 
     //draging
@@ -54,14 +54,14 @@ class StickerView : AppCompatImageView {
     }
 
     init {
-        mScaleDetector = ScaleGestureDetector(context, ScaleListener())
+//        mScaleDetector = ScaleGestureDetector(context, ScaleListener())
 
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         super.onTouchEvent(event)
 
-        mScaleDetector!!.onTouchEvent(event)
+//        mScaleDetector!!.onTouchEvent(event)
         if (event.pointerCount == 2)
             rot.onTouchEvent(event)
         when (event.actionMasked) {
@@ -87,13 +87,13 @@ class StickerView : AppCompatImageView {
         return true
     }
 
-    private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
-        override fun onScale(detector: ScaleGestureDetector): Boolean {
-            mScaleFactor *= detector.scaleFactor
-            mScaleFactor = Math.max(1.0f, Math.min(mScaleFactor, 3f))
-            scaleX = mScaleFactor
-            scaleY = mScaleFactor
-            return true
-        }
-    }
+//    private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+//        override fun onScale(detector: ScaleGestureDetector): Boolean {
+////            mScaleFactor *= detector.scaleFactor
+////            mScaleFactor = Math.max(1.0f, Math.min(mScaleFactor, 3f))
+////            scaleX = mScaleFactor
+////            scaleY = mScaleFactor
+//            return true
+//        }
+//    }
 }

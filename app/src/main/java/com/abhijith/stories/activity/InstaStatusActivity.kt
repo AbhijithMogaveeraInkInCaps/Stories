@@ -63,7 +63,7 @@ class InstaStatusActivity : AppCompatActivity() {
                             )
                             x = dragEvent.x
                             y = dragEvent.y
-                            layoutParams = ConstraintLayout.LayoutParams(400, 400)
+                            layoutParams = ConstraintLayout.LayoutParams(300, 300)
                             loc = dragData.toString().toInt()
                         })
 
